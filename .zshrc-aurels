@@ -1,0 +1,69 @@
+# ZSH
+
+plugins=(git brew bundler capistrano docker gem rake rbenv ruby yarn catimg macos rails)
+
+## Exports
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export EDITOR="hx"
+export GOPATH="/Users/aurels/Dev/golang"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+## Aliases
+
+alias ohmyzsh-update="/usr/bin/env ZSH=$ZSH zsh $ZSH/tools/check_for_upgrade.sh"
+alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+alias runeslint="node_modules/eslint/bin/eslint.js --ext .js --ext .jsx ."
+alias vmrun="/Applications/VMware\ Fusion.app/Contents/Library/vmrun"
+alias gitdiff="git icdiff"
+alias sublime=subl
+alias dc="docker compose"
+alias wezterm=/Applications/WezTerm.app/Contents/MacOS/wezterm
+
+goto_openscad(){
+  cd /Users/aurels/Library/CloudStorage/Dropbox/Atelier/Projets\ et\ plans/OpenSCAD
+}
+
+## SSH
+
+ssh-add /Users/aurels/.ssh/id_rsa               >& /dev/null
+ssh-add /Users/aurels/.ssh/cloud.pem            >& /dev/null
+ssh-add /Users/aurels/.ssh/reprtoir.pem         >& /dev/null
+ssh-add /Users/aurels/.ssh/rvd-server-pilot.pem >& /dev/null
+
+## Zoxide
+
+eval "$(zoxide init zsh)"
+alias cd=z
+
+## iTerm
+
+newtabi(){
+  osascript \
+    -e 'tell application "iTerm2" to tell current window to set newWindow to (create tab with default profile)'\
+    -e "tell application \"iTerm2\" to tell current session of newWindow to write text \"${@}\""
+}
+
+## Reprtoir
+
+goto_reprtoir() {
+  cd ~/Dev/ruby/reprtoir/core
+}
+
+init_reprtoir(){
+  newtabi 'goto_reprtoir && foreman start -f Procfile.dev'
+  newtabi 'goto_reprtoir && touch tmp/restart.txt && bundle exec sidekiq -c 1'
+  #newtabi 'goto_reprtoir && bundle exec rails console'
+  # newtabi 'goto_reprtoir && lazygit'
+  # newtabi 'goto_reprtoir && yazi'
+  # newtabi 'goto_reprtoir && hx'
+  newtabi 'goto_reprtoir'
+  goto_reprtoir && tail -f log/development.log
+}
+
+wez_init_reprtoir(){
+  wezterm cli spawn -- /bin/zsh -c 'touch tmp/restart.txt && bundle exec sidekiq -c 1'
+  wezterm cli spawn -- /bin/zsh -c 'bundle exec rails console'
+  echo "coucou"
+}

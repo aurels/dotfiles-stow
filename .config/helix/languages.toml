@@ -1,0 +1,26 @@
+# RUBY
+
+[language-server.solargraph]
+command = "/Users/aurels/.rbenv/versions/3.3.5/bin/solargraph"
+config.diagnostics=true
+config.formatting=false
+
+[[language]]
+name = "ruby"
+language-servers=[{name="solargraph"}]
+
+# JAVASCRIPT
+
+[language-server.typescript-language-server]
+command = "/Users/aurels/.nvm/versions/node/v18.18.0/bin/typescript-language-server"
+args = ["--stdio"]
+
+[[language]]
+name = "javascript"
+language-servers = [ "typescript-language-server" ]
+auto-format = false
+
+[[language]]
+name = "jsx"
+language-servers = [ "typescript-language-server" ]
+auto-format = false
