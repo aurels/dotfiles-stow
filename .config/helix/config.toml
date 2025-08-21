@@ -1,4 +1,3 @@
-# theme = "base16_default"
 theme = "dracula"
 
 [editor]
@@ -17,6 +16,6 @@ character = "╎"
 render = true
 skip-levels = 1
 
-[keys.normal]
-esc = ["collapse_selection", "keep_primary_selection"]
-"A-h" = ":config-reload"
+# [keys.normal]
+# esc = ["collapse_selection", "keep_primary_selection"]
+# "A-h" = ":config-reload"
