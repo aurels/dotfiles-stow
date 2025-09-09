@@ -132,3 +132,9 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 . "/Users/aurels/.deno/env"
+# bun completions
+[ -s "/Users/aurels/.bun/_bun" ] && source "/Users/aurels/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

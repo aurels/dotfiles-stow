@@ -1,3 +1,9 @@
+# COPILOT
+
+[language-server.gpt]
+command = "/usr/local/bin/helix-gpt"
+args = ["--handler", "copilot", "--copilotApiKey", "ghu_Oy523faVDfVdoEYbyQpVnFwkIkb3Zn0AXyUi"]
+
 # RUBY
 
 [language-server.solargraph]
@@ -7,7 +13,7 @@ config.formatting=false
 
 [[language]]
 name = "ruby"
-language-servers=[{name="solargraph"}]
+language-servers=[{ name="solargraph" }, { name="gpt" }]
 
 # JAVASCRIPT
 
@@ -17,10 +23,10 @@ args = ["--stdio"]
 
 [[language]]
 name = "javascript"
-language-servers = [ "typescript-language-server" ]
+language-servers = ["typescript-language-server", "gpt"]
 auto-format = false
 
 [[language]]
 name = "jsx"
-language-servers = [ "typescript-language-server" ]
+language-servers = ["typescript-language-server", "gpt"]
 auto-format = false

@@ -37,6 +37,11 @@ ssh-add /Users/aurels/.ssh/rvd-server-pilot.pem >& /dev/null
 eval "$(zoxide init zsh)"
 alias cd=z
 
+## Helix
+
+COPILOT_API_KEY=ghu_Oy523faVDfVdoEYbyQpVnFwkIkb3Zn0AXyUi
+HANDLER=copilot
+
 ## Notes
 # Search and replace : scooter
 # file explorer : yazi
