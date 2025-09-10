@@ -1,6 +1,7 @@
 # ZSH
 
-plugins=(git brew bundler capistrano docker gem rake rbenv ruby yarn catimg macos rails)
+# plugins=(git brew bundler capistrano docker gem rake rbenv ruby yarn catimg macos rails)
+plugins=(git)
 
 ## Exports
 
@@ -41,36 +42,3 @@ alias cd=z
 
 COPILOT_API_KEY=ghu_Oy523faVDfVdoEYbyQpVnFwkIkb3Zn0AXyUi
 HANDLER=copilot
-
-## Notes
-# Search and replace : scooter
-# file explorer : yazi
-
-# ## iTerm
-
-# newtabi(){
-#   osascript \
-#     -e 'tell application "iTerm2" to tell current window to set newWindow to (create tab with default profile)'\
-#     -e "tell application \"iTerm2\" to tell current session of newWindow to write text \"${@}\""
-# }
-
-# goto_reprtoir() {
-#   cd ~/Dev/ruby/reprtoir/core
-# }
-
-# init_reprtoir(){
-#   newtabi 'goto_reprtoir && foreman start -f Procfile.dev'
-#   newtabi 'goto_reprtoir && touch tmp/restart.txt && bundle exec sidekiq -c 1'
-#   #newtabi 'goto_reprtoir && bundle exec rails console'
-#   # newtabi 'goto_reprtoir && lazygit'
-#   # newtabi 'goto_reprtoir && yazi'
-#   # newtabi 'goto_reprtoir && hx'
-#   newtabi 'goto_reprtoir'
-#   goto_reprtoir && tail -f log/development.log
-# }
-
-# wez_init_reprtoir(){
-#   wezterm cli spawn -- /bin/zsh -c 'touch tmp/restart.txt && bundle exec sidekiq -c 1'
-#   wezterm cli spawn -- /bin/zsh -c 'bundle exec rails console'
-#   echo "coucou"
-# }

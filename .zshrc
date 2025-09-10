@@ -73,7 +73,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source ~/.zshrc-aurels
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
