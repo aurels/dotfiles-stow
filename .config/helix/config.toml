@@ -2,8 +2,8 @@ theme = "dracula"
 
 [editor]
 true-color = true
-lsp.auto-signature-help = false
-auto-completion = false
+# lsp.auto-signature-help = true
+# auto-completion = true
 smart-tab.enable = false
 soft-wrap.enable = false
 cursorline = true
@@ -15,3 +15,6 @@ cursor-shape.insert = "bar"
 character = "╎"
 render = true
 skip-levels = 1
+
+[editor.inline-diagnostics]
+cursor-line = "error"

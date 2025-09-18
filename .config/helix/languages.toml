@@ -1,32 +1,33 @@
 # COPILOT
 
-[language-server.gpt]
-command = "/usr/local/bin/helix-gpt"
-args = ["--handler", "copilot", "--copilotApiKey", "ghu_Oy523faVDfVdoEYbyQpVnFwkIkb3Zn0AXyUi"]
+# [language-server.gpt]
+# command = "/usr/local/bin/helix-gpt"
+# args = ["--handler", "copilot", "--copilotApiKey", "ghu_Oy523faVDfVdoEYbyQpVnFwkIkb3Zn0AXyUi"]
 
 # RUBY
 
 [language-server.solargraph]
-command = "/Users/aurels/.rbenv/versions/3.3.5/bin/solargraph"
+command = "/Users/aurels/helix-helpers/bin/solargraph"
 config.diagnostics=true
 config.formatting=false
 
 [[language]]
 name = "ruby"
-language-servers=[{ name="solargraph" }, { name="gpt" }]
+# language-servers=[{ name="solargraph" }, { name="gpt" }]
+language-servers=[{ name="solargraph" }]
 
 # JAVASCRIPT
 
 [language-server.typescript-language-server]
-command = "/Users/aurels/.nvm/versions/node/v18.18.0/bin/typescript-language-server"
+command = "/Users/aurels/helix-helpers/node_modules/.bin/typescript-language-server"
 args = ["--stdio"]
 
 [[language]]
 name = "javascript"
-language-servers = ["typescript-language-server", "gpt"]
+language-servers = ["typescript-language-server"]
 auto-format = false
 
 [[language]]
 name = "jsx"
-language-servers = ["typescript-language-server", "gpt"]
+language-servers = ["typescript-language-server"]
 auto-format = false
