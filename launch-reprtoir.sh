@@ -27,7 +27,7 @@ git_pane=$(wezterm cli spawn --cwd "$PROJECT_DIR")
 
 run_command "$helix_pane" 'hx'
 run_command "$lazygit_pane" 'lazygit'
-run_command "$foreman_pane" 'foreman start -f Procfile.dev'
+run_command "$foreman_pane" 'foreman start -f Procfile.aurels.dev'
 run_command "$log_pane" 'tail -f log/development.log'
 run_command "$sidekiq_pane" 'touch tmp/restart.txt && bundle exec sidekiq -c 1'
 run_command "$console_pane" 'bundle exec rails console'

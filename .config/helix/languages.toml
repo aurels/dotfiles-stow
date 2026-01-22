@@ -1,33 +1,41 @@
-# COPILOT
-
-# [language-server.gpt]
-# command = "/usr/local/bin/helix-gpt"
-# args = ["--handler", "copilot", "--copilotApiKey", "ghu_Oy523faVDfVdoEYbyQpVnFwkIkb3Zn0AXyUi"]
-
-# RUBY
+# Ruby
 
 [language-server.solargraph]
 command = "/Users/aurels/helix-helpers/bin/solargraph"
 config.diagnostics=true
 config.formatting=false
 
+[language-server.ruby-lsp]
+command = "/Users/aurels/helix-helpers/bin/ruby-lsp"
+config = { enabledFeatures = ["documentSymbols", "documentHighlights", "foldingRanges",
+                              "selectionRanges", "semanticHighlighting", "formatting",
+                              "codeActions"] }
+
 [[language]]
 name = "ruby"
-# language-servers=[{ name="solargraph" }, { name="gpt" }]
-language-servers=[{ name="solargraph" }]
+language-servers=[{ name="solargraph" }, { name="ruby-lsp" }]
 
-# JAVASCRIPT
+
+# Javascript
 
 [language-server.typescript-language-server]
-command = "/Users/aurels/helix-helpers/node_modules/.bin/typescript-language-server"
+command = "typescript-language-server"
 args = ["--stdio"]
+
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint.config]
+validate = "on"
+run = "onType"
 
 [[language]]
 name = "javascript"
-language-servers = ["typescript-language-server"]
+language-servers = [{ name="typescript-language-server" }, { name="eslint" }]
 auto-format = false
 
 [[language]]
 name = "jsx"
-language-servers = ["typescript-language-server"]
+language-servers = [{ name="eslint" }]
 auto-format = false

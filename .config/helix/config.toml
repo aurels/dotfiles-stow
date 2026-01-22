@@ -2,19 +2,23 @@ theme = "dracula"
 
 [editor]
 true-color = true
-# lsp.auto-signature-help = true
-# auto-completion = true
+auto-completion = false
 smart-tab.enable = false
 soft-wrap.enable = false
 cursorline = true
+cursorcolumn = true
 trim-trailing-whitespace = true
+insert-final-newline = true
 trim-final-newlines = true
 cursor-shape.insert = "bar"
+cursor-shape.select = "underline"
+file-picker.hidden = false
+# inline-diagnostics.cursor-line = "warning"
+end-of-line-diagnostics = "hint" # "hint"
+lsp.display-progress-messages = true
+lsp.auto-signature-help = false
 
 [editor.indent-guides]
 character = "╎"
 render = true
-skip-levels = 1
-
-[editor.inline-diagnostics]
-cursor-line = "error"
+skip-levels = 0
