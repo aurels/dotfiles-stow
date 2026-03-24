@@ -7,18 +7,18 @@ export GOPATH="/Users/aurels/Dev/golang"
 
 # Settings
 
-# set -Ux fish_user_paths /opt/homebrew/bin $fish_user_paths
 set -U fish_greeting ""
 
 ## Aliases
 
-alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-alias sublime=subl
-alias gitdiff="git icdiff"
 alias dc="docker compose"
-alias wezterm=/Applications/WezTerm.app/Contents/MacOS/wezterm
-alias utm="/Applications/UTM.app/Contents/MacOS/utm"
-alias utmctl="/Applications/UTM.app/Contents/MacOS/utmctl"
+
+if test (uname) = "Darwin"
+  alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+  alias wezterm=/Applications/WezTerm.app/Contents/MacOS/wezterm
+  alias utm="/Applications/UTM.app/Contents/MacOS/utm"
+  alias utmctl="/Applications/UTM.app/Contents/MacOS/utmctl"
+end
 
 ## SSH
 
@@ -35,4 +35,6 @@ alias ls="eza -ali"
 
 ## Mise
 
-/opt/homebrew/bin/mise activate fish | source
+if test (uname) = "Darwin"
+  /opt/homebrew/bin/mise activate fish | source
+end
