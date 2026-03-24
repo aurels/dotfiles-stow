@@ -24,12 +24,6 @@
 [pager]
 	branch = false
 
-[diff]
-	tool = icdiff
-[difftool]
-	prompt = false
-[difftool "icdiff"]
-	cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
 [init]
 	defaultBranch = master
 [merge]
